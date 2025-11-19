@@ -116,25 +116,19 @@ export const AuthProvider = ({ children }) => {
      */
     const register = async (userData) => {
         // TODO: complete me
-        try{
-            const res = await fetch(`${BACKEND_URL}/register`, {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(userData)
-            });
+        const res = await fetch(`${BACKEND_URL}/register`, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(userData)
+        });
 
-            if(!res.ok){
-                const error_msg = await res.json().catch(() => null);
-                return error_msg?.message || "Registration Failed"
-            }
+        if(!res.ok){
+            const error_msg = await res.json().catch(() => null);
+            return error_msg?.message || "Registration Failed"
+        }
 
-            navigate("/")
-            return "";
-        }
-        catch (err){
-            console.log("Error: " + err);
-            return "Internal Server Error!"
-        }
+        navigate("/")
+        return "";
     };
 
     return (
