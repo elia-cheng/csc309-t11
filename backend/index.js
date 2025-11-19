@@ -1,7 +1,7 @@
 import express from "express";
 import routes from "./routes.js";
 import dotenv from "dotenv";
-
+import cors from "cors";
 dotenv.config();
 
 const app = express();
@@ -24,6 +24,7 @@ app.use('', routes);
 app.get('/', function (req, res){
     res.send({msg: 'Running with CORS enabled'})
 })
+
 
 app.use((err, req, res, next) => {
   console.error(err);
