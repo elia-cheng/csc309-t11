@@ -5,7 +5,6 @@ import cors from "cors";
 dotenv.config();
 
 const app = express();
-const cors = require('cors');
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 
 // TODO: complete me (CORS)
