@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
         (async () => {
             try{
                 const res = await fetch(`${BACKEND_URL}/user/me`, {
-                    headers: { Authorization: `Bearer ${token}` }
+                    headers: { Authorization: token}
                 });
 
                 if (!res.ok){
@@ -87,7 +87,7 @@ export const AuthProvider = ({ children }) => {
 
             const user_me = await fetch(`${BACKEND_URL}/user/me`, {
                 headers: {
-                    Authorization: `Bearer ${data.token}`
+                    Authorization: data.token
                 }
             });
 
