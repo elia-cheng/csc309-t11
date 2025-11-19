@@ -117,11 +117,9 @@ export const AuthProvider = ({ children }) => {
     const register = async (userData) => {
         // TODO: complete me
         try{
-            const res = await fetch(`${BACKEND_URL}.railway.app/register`, {
+            const res = await fetch(`${BACKEND_URL}/register`, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(userData)
             });
 
@@ -135,7 +133,7 @@ export const AuthProvider = ({ children }) => {
         }
         catch (err){
             console.log("Error: " + err);
-            return "Internal Server Error."
+            return "Internal Server Error!"
         }
     };
 
