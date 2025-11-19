@@ -1,8 +1,6 @@
 {
   "dependencies": {
-    "cors": "^2.8.5"
-  },
-  "devDependencies": {
+    "cors": "^2.8.5",
     "serve": "^14.2.5"
   }
 }
