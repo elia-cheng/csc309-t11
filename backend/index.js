@@ -24,6 +24,17 @@ app.get('/', function (req, res){
     res.send({msg: 'Running with CORS enabled'})
 })
 
+app.post("/login", (req, res) => {
+    const { username, password } = req.body;
+    const data = UserService.login(username, password);
+
+    if (!data) {
+        return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    res.json({ token: data });
+});
+
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({ message: "Internal Server Error" });
