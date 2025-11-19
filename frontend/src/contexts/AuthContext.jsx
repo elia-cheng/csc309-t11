@@ -127,7 +127,7 @@ export const AuthProvider = ({ children }) => {
             return error_msg?.message || "Registration Failed"
         }
 
-        navigate("/")
+        navigate("/success")
         return "";
     };
 
