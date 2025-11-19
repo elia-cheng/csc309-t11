@@ -103,7 +103,7 @@ export const AuthProvider = ({ children }) => {
         }
         catch (err){
             console.log("Error: " + err);
-            return "Internal Server Error"
+            return "Internal Server Error."
         }
     };
 
@@ -135,7 +135,7 @@ export const AuthProvider = ({ children }) => {
         }
         catch (err){
             console.log("Error: " + err);
-            return "Internal Server Error"
+            return "Internal Server Error."
         }
     };
 
