@@ -7,7 +7,6 @@ dotenv.config();
 const app = express();
 
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
-
 // --- CORS FIX ---
 app.use(cors({
   origin: FRONTEND_URL,
@@ -22,11 +21,6 @@ app.use("", routes);
 
 app.get("/", (req, res) => {
   res.send({ msg: "Running with CORS enabled" });
-});
-
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).json({ message: "Internal Server Error" });
 });
 
 export default app;
